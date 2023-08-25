@@ -40,4 +40,23 @@ for i, letter in enumerate(quote):
     new_quote.append(letter)
     new_str = "".join(new_quote)
 
-print(new_str)
+
+# print(new_str)
+rerun = ''
+while not rerun == 'N':
+    for i, letter in enumerate(quote):
+        # print(f'Index: {i}, letter: {letter}.', end='')
+        if i % index == 0:
+            print(letter.upper(), end="")
+        else:
+            print(letter, end="")
+
+    print(letter)
+
+    print()
+    rerun = input('Would you like to try again? (Y/N)\n').upper()
+    if rerun != 'N':
+        index = int(input("Enter a position index: "))
+
+print()
+print('Thanks for playing goodbye!')
