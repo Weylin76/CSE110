@@ -1,8 +1,9 @@
-# # CORE REQUIREMENTS 01 - 02
-# word = 'Commitment'
+# CORE REQUIREMENTS 01 - 02
+word = 'Commitment'
 
 # for char in word:
-#     print(char)
+#     print(char, end='')
+
 
 # fav_letter = input('What is your favorite letter:')
 # for char in word:
@@ -29,16 +30,16 @@
 
 # STRETCH CHALLENGE 1
 quote = "In coming days, it will not be possible to survive spiritually without the guiding, directing, comforting, and constant influence of the Holy Ghost."
-new_quote = []
+# new_quote = []
 
 index = int(input("Enter a position index: "))
 
-for i, letter in enumerate(quote):
-    # print(f'Index: {i}, letter: {letter}.', end='')
-    if i % index == 0:
-        letter = quote[i].upper()
-    new_quote.append(letter)
-    new_str = "".join(new_quote)
+# for i, letter in enumerate(quote):
+#     # print(f'Index: {i}, letter: {letter}.', end='')
+#     if i % index == 0:
+#         letter = quote[i].upper()
+#     new_quote.append(letter)
+#     new_str = "".join(new_quote)
 
 
 # print(new_str)
@@ -58,5 +59,5 @@ while not rerun == 'N':
     if rerun != 'N':
         index = int(input("Enter a position index: "))
 
-print()
-print('Thanks for playing goodbye!')
+# print()
+# print('Thanks for playing goodbye!')
