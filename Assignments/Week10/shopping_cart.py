@@ -49,10 +49,13 @@ while action != '5':
 
         new_item = input('What item would you like to add?\n')
         item_price = float(input('What is the price of the item?\n'))
-        shopping_list.append(new_item.capitalize())
-        item_price_list.append(item_price)
-        print(Colors.BLUE +
-              f'\n{new_item.capitalize()} has been added to the list!')
+        if new_item.capitalize() in shopping_list:
+            print(Colors.RED + '\nYou already have that item in your cart.')
+        else:
+            shopping_list.append(new_item.capitalize())
+            item_price_list.append(item_price)
+            print(Colors.BLUE +
+                  f'\n{new_item.capitalize()} has been added to the list!')
 
     elif action == '2':
         print_full_list()
