@@ -52,7 +52,7 @@ while action != '5':
         shopping_list.append(new_item.capitalize())
         item_price_list.append(item_price)
         print(Colors.BLUE +
-              f'{new_item.capitalize()} has been added to the list!')
+              f'\n{new_item.capitalize()} has been added to the list!')
 
     elif action == '2':
         print_full_list()
