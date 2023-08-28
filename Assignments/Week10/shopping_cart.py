@@ -33,7 +33,9 @@ def print_full_list():
                   f'{i}. {item} - ${item_price:,.2f}' + Colors.RESET)
 
 
-print('Welcome to the shopping center!')
+print("\n\033[22;34;40m Welcome to the shopping center! \033[m")
+
+# print('Welcome to the shopping center!')
 while action != '5':
     print()
 
