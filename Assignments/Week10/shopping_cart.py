@@ -24,10 +24,13 @@ def print_full_list():
     print()
     print('The contents of the shopping cart are:')
     for i, item in enumerate(shopping_list, start=1):
+        item_price = item_price_list[i - 1]
         if i % 2 == 0:
-            print(Colors.MAGENTA + f'{i}. {item}' + Colors.RESET)
+            print(Colors.MAGENTA +
+                  f'{i}. {item} - ${item_price:,.2f}' + Colors.RESET)
         else:
-            print(Colors.CYAN + f'{i}. {item}' + Colors.RESET)
+            print(Colors.CYAN +
+                  f'{i}. {item} - ${item_price:,.2f}' + Colors.RESET)
 
 
 print('Welcome to the shopping center!')
@@ -35,7 +38,12 @@ while action != '5':
     print()
 
     action = input(Colors.RESET +
-                   'What action would you like to take: \n'+Colors.YELLOW + '1. Add Item\n'+Colors.CYAN + '2. View Cart\n' + Colors.RED + '3. Remove Item\n' + Colors.GREEN + '4. Compute Total\n' + Colors.RESET + '5. Quit\n\n')
+                   'What action would you like to take: \n'+Colors.YELLOW +
+                   '1. Add Item\n'+Colors.CYAN +
+                   '2. View Cart\n' + Colors.RED +
+                   '3. Remove Item\n' + Colors.GREEN +
+                   '4. Compute Total\n' + Colors.RESET +
+                   '5. Quit\n\n')
 
     if action == '1':
 
@@ -57,4 +65,4 @@ while action != '5':
 
     elif action == '4':
         total = sum(item_price_list)  # Using the sum() function
-        print(Colors.GREEN + f'Your total is: ${total:,.2f}')
+        print(Colors.GREEN + f'\nYour total is: ${total:,.2f}')
