@@ -1,3 +1,8 @@
+# Todo list
+# 1. if cart is empty print a message
+# 2. restrict user from removing if items are not in the cart
+# 3. Validate only numbers can be enter for prices greater than 0 to 9999999999
+
 # create color class
 class Colors:
     RESET = '\033[0m'
