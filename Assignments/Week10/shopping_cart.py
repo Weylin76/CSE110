@@ -1,6 +1,4 @@
 # Todo list
-# 1. if cart is empty print a message
-# 2. restrict user from removing if items are not in the cart
 # 3. Validate only numbers can be enter for prices greater than 0 to 9999999999
 
 # create color class
@@ -27,15 +25,18 @@ item = ''
 
 def print_full_list():
     print()
-    print('The contents of the shopping cart are:')
-    for i, item in enumerate(shopping_list, start=1):
-        item_price = item_price_list[i - 1]
-        if i % 2 == 0:
-            print(Colors.MAGENTA +
-                  f'{i}. {item} - ${item_price:,.2f}' + Colors.RESET)
-        else:
-            print(Colors.CYAN +
-                  f'{i}. {item} - ${item_price:,.2f}' + Colors.RESET)
+    if len(shopping_list) == 0:
+        print(Colors.RED + 'Your Shopping cart is currently empty.')
+    else:
+        print('The contents of the shopping cart are:')
+        for i, item in enumerate(shopping_list, start=1):
+            item_price = item_price_list[i - 1]
+            if i % 2 == 0:
+                print(Colors.MAGENTA +
+                      f'{i}. {item} - ${item_price:,.2f}' + Colors.RESET)
+            else:
+                print(Colors.CYAN +
+                      f'{i}. {item} - ${item_price:,.2f}' + Colors.RESET)
 
 
 print("\n\033[22;34;40m Welcome to the shopping center! \033[m")
@@ -56,6 +57,9 @@ while action != '5':
 
         new_item = input('What item would you like to add?\n')
         item_price = float(input('What is the price of the item?\n'))
+        while item_price <= 0 or item_price >= 999999999:
+            print(Colors.RED + 'Sorry that price is not reasonable.' + Colors.RESET)
+            item_price = float(input('What is the price of the item?\n'))
         if new_item.capitalize() in shopping_list:
             print(Colors.RED + '\nYou already have that item in your cart.')
         else:
@@ -71,9 +75,13 @@ while action != '5':
         print_full_list()
         remove_index = int(
             input('What is the number of the item you wish to remove? '))
-        removed_item = shopping_list.pop(remove_index-1)
-        removed_price = item_price_list.pop(remove_index-1)
-        print(Colors.RED + f'{removed_item} has been remvoed!' + Colors.RESET)
+        if len(shopping_list) == 0:
+            print(Colors.RED + '\nThere are no items in the cart!')
+        else:
+            removed_item = shopping_list.pop(remove_index-1)
+            removed_price = item_price_list.pop(remove_index-1)
+            print(Colors.RED +
+                  f'{removed_item} has been remvoed!' + Colors.RESET)
 
     elif action == '4':
         total = sum(item_price_list)  # Using the sum() function
