@@ -1,3 +1,12 @@
+# file_path = r'C:\Users\weyli\Documents\BYU-I\CSE 110\Assignments\Week11\books.txt'
+
+# with open(file_path) as book_file:
+#     for line in book_file:
+#         book = line.strip()
+#         print(book)
+
+# Open the file.
+# The "with" syntax makes it so I don't have to worry about closing it later
 with open("books.txt") as book_file:
 
     # Go through each line in the file, one by one
