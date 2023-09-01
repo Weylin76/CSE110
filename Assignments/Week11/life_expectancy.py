@@ -1,6 +1,4 @@
 master_list = []
-line_level_list = []
-newest_list = []
 min_age = 999
 min_age_year = 0
 min_age_country = ""  # Variable to store the country with min age
