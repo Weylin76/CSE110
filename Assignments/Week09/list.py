@@ -6,5 +6,3 @@ while add_more != 'N':
     friends_list.append(friend)
     add_more = input(
         'Would you like to add another friend to your list? (Y/N)').upper()
-
-print(friends_list)
