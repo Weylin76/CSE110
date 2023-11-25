@@ -26,7 +26,7 @@ total = subtotal + sales_tax
 # create print statement
 print()
 print(Color.RESET + f'Subtotal \t${subtotal:.2f}')
-print(f'Sales Tax: \t${sales_tax:.2f}')S
+print(f'Sales Tax: \t${sales_tax:.2f}')
 print(f'Total \t\t${total:,.2f}')
 
 # create a variable for payment
@@ -44,6 +44,6 @@ customer_change = payment_amt - total
 print()
 print(Color.MAGENTA +
       'Thank you for visiting us.  Your change is ' + Color.GREEN +
-S      f'${customer_change:.2f}.' + Color.MAGENTA + '\nPlease visit us again!'
+      f'${customer_change:.2f}.' + Color.MAGENTA + '\nPlease visit us again!'
       + Color.RESET)
 print()
